@@ -1,22 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" type="text/css" href="csstask2(h).css">
-    </head>
-    <body>
-        <div class="m1" id="text">
-            <nav>
-                <a href="#" class="nav-link"><h2>Home</h2></a>
-                <a href="#" class="nav-link"><h2>Java</h2></a>
-                <a href="#" class="nav-link"><h2>CSS</h2></a>
-                <a href="#" class="nav-link"><h2>HTMl</h2></a>
-                <a href="#" class="nav-link"><h2>Javascript</h2></a>
-                <a href="#" class="nav-link"><h2>Bootstrap</h2></a>
-                
-              </nav>
-        </div>
-    </body>
+<html>
+
+<head>
+    <title>Horizontal Navigation Bar</title>
+    <style>
+        /* Style the navigation bar */
+        ul.navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #726E6D
+;
+            overflow: hidden;
+        }
+
+        /* Style the navigation bar items */
+        ul.navbar li {
+            float: left;
+        }
+
+        ul.navbar li a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        ul.navbar li.selected a {
+            background-color: grey;
+        }
+
+        ul.navbar li a:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="navbar">
+        <li><a href="#" onclick="selectItem(0)">Home</a></li>
+        <li><a href="#" onclick="selectItem(1)">Java</a></li>
+        <li><a href="#" onclick="selectItem(3)">HTML</a></li>
+        <li><a href="#" onclick="selectItem(2)">CSS</a></li>
+    </ul>
+
+    <script>
+        // JavaScript to handle the click event and change the background color
+        function selectItem(index) {
+            const menuItems = document.querySelectorAll('.navbar li');
+            menuItems.forEach((menuItem, i) => {
+                if (i === index) {
+                    menuItem.classList.add('selected');
+                } else {
+                    menuItem.classList.remove('selected');
+                }
+            });
+        }
+    </script>
+</body>
+
 </html>
